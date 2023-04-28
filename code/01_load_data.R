@@ -41,7 +41,7 @@ tz_zip_files <- list.files(zip_dir_path, pattern = "*.zip", full.names = TRUE)
 sapply(tz_zip_files, unzip, exdir = here("data", "unzipped_tz_dhs"))
 
 # Get a list of all .dta files in the directory
-tz_dta_files <- list.files(zip_dir_path, pattern = "*.dta", full.names = TRUE)
+tz_dta_files <- list.files(here("data", "unzipped_tz_dhs"), pattern = "*.dta", full.names = TRUE)
 
 # Load each .dta file as a tibble and store in a list
 tz_dta_list <- lapply(tz_dta_files, read_dta) %>%
